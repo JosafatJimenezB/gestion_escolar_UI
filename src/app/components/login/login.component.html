@@ -11,23 +11,30 @@
         <small class="text-gray-400">Bienvenido nuevamente a Escihu Virtual</small>
 
 
-        <form class="mt-4">
+        <form class="mt-4" #form="ngForm" (ngSubmit)="loginSubmit(form)">
           <div class="mb-3">
-            <label class="mb-2 block text-xs font-semibold">Email</label>
-            <input type="email" placeholder="Enter your email"
-              class="block w-full rounded-md border border-gray-300 focus:border-blue-700 focus:outline-none focus:ring-1 focus:ring-purple-700 py-1 px-1.5 text-gray-500" />
+            <label for="identifier" class="mb-2 block text-xs font-semibold">Email</label>
+            <input type="text" placeholder="Enter your email" id="identifier" name="identifier"
+              class="block w-full rounded-md border border-gray-300 focus:border-blue-700 focus:outline-none focus:ring-1 focus:ring-purple-700 py-1 px-1.5 text-gray-500"
+              [(ngModel)]="LoginResponse.identifier" />
           </div>
 
           <div class="mb-3">
             <label class="mb-2 block text-xs font-semibold">Password</label>
-            <input type="password" placeholder="*****"
-              class="block w-full rounded-md border border-gray-300 focus:border-blue-700 focus:outline-none focus:ring-1 focus:ring-purple-700 py-1 px-1.5 text-gray-500" />
+            <input type="password" placeholder="*****" name="password" id="password"
+              class="block w-full rounded-md border border-gray-300 focus:border-blue-700 focus:outline-none focus:ring-1 focus:ring-purple-700 py-1 px-1.5 text-gray-500"
+              [(ngModel)]="LoginResponse.password" />
           </div>
 
           <div class="mb-3 flex flex-wrap content-center">
             <input id="remember" type="checkbox" class="mr-1 checked:bg-blue-700" /> <label for="remember"
               class="mr-auto text-xs font-semibold">Recordar credenciales </label>
             <a href="#" class="text-xs font-semibold text-blue-700">Olvido su contraseña?</a>
+          </div>
+
+          <div class="mb-3">
+            <button type="submit"
+              class="w-full rounded-md bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-1 focus:ring-purple-700 py-1 px-1.5 text-white font-semibold">Login</button>
           </div>
         </form>
       </div>
