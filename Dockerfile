@@ -13,6 +13,8 @@ RUN yarn build
 
 # STEP:3 - Servidor de Nginx
 FROM nginx:alpine as prod
+WORKDIR /usr/share/nginx/html
 EXPOSE 90
-COPY --from=builder /app/dist/gestion-escolar-frontend /usr/share/nginx/html
+RUN rm -rf ./*
+COPY --from=builder /app/dist/gestion-escolar-frontend .
 CMD ["nginx", "-g", "daemon off;"]
