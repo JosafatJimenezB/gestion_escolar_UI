@@ -12,7 +12,7 @@ COPY . .
 RUN yarn build
 
 # STEP:3 - Servidor de Nginx
-FROM nginx:alpine AS production
+FROM nginx:1.23.1-alpine AS production
 # WORKDIR /usr/share/nginx/html
 # COPY --from=builder /app/dist/gestion-escolar-frontend .
 ENV NODE_ENV production
