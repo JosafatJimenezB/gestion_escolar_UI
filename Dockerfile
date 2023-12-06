@@ -2,7 +2,7 @@
 FROM node:18-alpine AS dev-deps
 WORKDIR /app
 COPY package.json yarn.lock ./
-RUN yarn
+RUN yarn install
 
 # STEP:2 - Angular en produccion
 FROM node:18-alpine AS build
