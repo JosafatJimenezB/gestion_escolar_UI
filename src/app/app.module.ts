@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { AuthInterceptor } from './helpers/auth.interceptor';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
+import { CiclosEscolarresModule } from './ciclos-escolares/ciclos-escolarres.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { HomeComponent } from './pages/home/home.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CiclosEscolarresModule
   ],
   providers: [
     CookieService,
